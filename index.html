@@ -47,23 +47,25 @@
 
   <script>
     const dictionary = {
-      "жаны́м": "душа моя, дорогой",
+      "жаным": "душа моя, дорогой",
       "бауыр": "брат",
-      "ба́тыр": "герой",
-      "аға́": "старший брат",
-      "қарында́с": "младшая сестра",
-      "сіңлі́": "младшая сестра",
-      "іні́": "младший брат",
-      "апа́": "старшая сестра",
-      "ана́": "мама",
-      "әке́": "папа",
+      "батыр": "герой",
+      "аға": "старший брат",
+      "қарындас": "младшая сестра",
+      "сіңлі": "младшая сестра",
+      "іні": "младший брат",
+      "апа": "старшая сестра",
+      "ана": "мама",
+      "әке": "папа",
       "дос": "друг",
       "махаббат": "любовь",
       "қазақ": "казах",
       "ел": "народ",
       "жер": "земля",
       "тіл": "язык",
-      "құдай": "бог"
+      "сәлем": "привет",
+      "отбасы": "семья",
+      "үй": "дом"
     };
 
     let currentWord = "";
@@ -81,17 +83,18 @@
     }
 
     function checkAnswer() {
-      const userInput = document.getElementById("userAnswer").value.trim().toLowerCase();
-      const correctAnswer = dictionary[currentWord].toLowerCase();
+  const userInput = document.getElementById("userAnswer").value.trim().toLowerCase();  // Convert user input to lowercase
+  const correctAnswer = dictionary[currentWord].toLowerCase();  // Convert the correct answer to lowercase
 
-      if (userInput && correctAnswer.includes(userInput)) {
-        document.getElementById("result").textContent = "Правильно!";
-        document.getElementById("result").style.color = "green";
-      } else {
-        document.getElementById("result").textContent = `Неправильно. Правильный ответ: ${dictionary[currentWord]}`;
-        document.getElementById("result").style.color = "red";
-      }
-    }
+  if (userInput && correctAnswer.includes(userInput)) {
+    document.getElementById("result").textContent = "Правильно!";
+    document.getElementById("result").style.color = "green";
+  } else {
+    document.getElementById("result").textContent = `Неправильно. Правильный ответ: ${dictionary[currentWord]}`;
+    document.getElementById("result").style.color = "red";
+  }
+}
+
 
     // старт
     nextWord();
